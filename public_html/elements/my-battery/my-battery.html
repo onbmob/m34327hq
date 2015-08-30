@@ -108,7 +108,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       /*width: calc(33% - 21px);*/
       /*height: 300px;*/
       /*text-align: center;*/
-      display: inline-block;
+      display: inline;
       /*position: relative;*/
       /*background-color: var(--paper-grey-200);*/
     }
@@ -201,11 +201,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /*#tabsContainer.paper-tabs {*/
        /*white-space: normal;*/
     /*}*/
+
     paper-fab.green {
       --paper-fab-background: var(--paper-green-500);
       --paper-fab-keyboard-focus-background: var(--paper-green-900);
     }
-
+    paper-tooltip {
+      --paper-tooltip-background: white;
+      --paper-tooltip-text-color: #000;
+    }
 
   </style>
   <template>
@@ -222,7 +226,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <!--Выбор бренда-->
     <paper-material elevation="2">
-
+      <paper-dropdown-menu label="Your favourite pastry">
+        <paper-menu class="dropdown-content">
+          <paper-item>Croissant</paper-item>
+          <paper-item>Donut</paper-item>
+          <paper-item>Financier</paper-item>
+          <paper-item>Madeleine</paper-item>
+        </paper-menu>
+      </paper-dropdown-menu>
     </paper-material>
     <paper-material elevation="2">
       <div dcardh>
@@ -533,13 +544,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
     <!--Card-->
-    <div>
+    <div >
       <template is="dom-repeat" items="{{cardbat}}">
-          <paper-material id="{{idpm(item.id)}}" on-mouseover="mousecard" class="card" style$="{{widthcard}}" elevation="3">
+        <paper-material id="{{idpm(item.id)}}" on-mouseover="mousecard" class="card" style$="{{widthcard}}" elevation="3">
+        <!--<paper-material id="{{idpm(item.id)}}" class="card" style$="{{widthcard}}" elevation="3">-->
           <!--<a href="/user/index/search-by-code-brand/code/{{item.articleSearch}}/producer/{{item.name}}" target="_blank">-->
           <!--<div>{{item.title}}</div>-->
             <div style="margin: 10px; height: 260px;">
-              <div dcardh>
+              <div dcardh >
                 <div>
                   <paper-fab mini icon="done" title="done" class="green"></paper-fab>
                 </div>
@@ -623,6 +635,69 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </iron-collapse>
          <!--</a>-->
         </paper-material>
+        <paper-tooltip for="{{idpm(item.id)}}">
+          <paper-button noink class="buttoncart">
+            <i18n-msg class="buttoncarttxt" msgid="addcart"></i18n-msg>
+          </paper-button>
+          <br><br><br>
+
+          <div dcardh>
+            <div dcardh style="width: 55%">
+              &nbsp
+              <div><i18n-msg class="carttxt" msgid="article"></i18n-msg></div>
+              <div class="flex"></div>
+              <div><span class="carttxt2">{{item.article}}</span></div>
+            </div>
+
+            <div dcardh style="width: 44%">
+              &nbsp &nbsp
+              <i18n-msg class="carttxt" msgid="capacity"></i18n-msg>
+              <div class="flex"></div>
+              <span class="carttxt2">{{item.capacity}}</span>
+            </div>
+          </div>
+          <br>
+
+          <div dcardh>
+            <div dcardh style="width: 55%">
+              &nbsp
+              <div><i18n-msg class="carttxt" msgid="size"></i18n-msg></div>
+              <div class="flex"></div>
+              <div><span title="{{lengthl}}">{{item.length}}</span>x<span title="{{widthl}}">{{item.width}}</span>x<span title="{{heightl}}">{{item.height}}</span></div>
+            </div>
+
+            <div dcardh style="width: 44%">
+              &nbsp &nbsp
+              <i18n-msg class="carttxt" msgid="cursh"></i18n-msg>
+              <div class="flex"></div>
+              <span class="carttxt2">{{item.cold_cranking_amperage}}</span>&nbspA
+            </div>
+          </div>
+          <br>
+
+          <div dcardh>
+            <div dcardh style="width: 55%">
+              &nbsp
+              <div><i18n-msg class="carttxt" msgid="polar"></i18n-msg></div>
+              <div class="flex"></div>
+              <div><iron-image class="usage" sizing="contain" src$="{{__imgp(item.polar)}}"></iron-image></div>
+            </div>
+
+            <div dcardh style="width: 44%">
+              &nbsp &nbsp
+              <i18n-msg class="carttxt" msgid="terminal"></i18n-msg>
+              <div class="flex"></div>
+              <span class="carttxt2">{{item.terminal}}</span>
+            </div>
+          </div>
+          <br>
+          <div dcardh  style="width: 95%">
+            <div class="flex"></div>
+            <span class="carttxt2">{{item.voltage}}</span> &nbsp &nbsp
+            <iron-image class="usage" sizing="contain" src$="{{__imgi(item.batteryUsage)}}"></iron-image>
+          </div>
+          <br>
+         </paper-tooltip>
       </template>
     </div>
 
