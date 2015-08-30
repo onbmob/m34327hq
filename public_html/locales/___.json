@@ -1,0 +1,302 @@
+{
+  "howtobuy": {
+    "description": "...",
+    "message": "Как купить"
+  },
+  "howtobuy1": {
+    "description": "...",
+    "message": "Оформить заказ на необходимые Вам запчасти можно любым из следующих способов:"
+  },
+  "howtobuy2": {
+    "description": "...",
+    "message": "через корзину интернет магазина;"
+  },
+  "howtobuy3": {
+    "description": "...",
+    "message": "по телефонам:"
+  },
+  "howtobuy4": {
+    "description": "...",
+    "message": "Отправить запрос на почту "
+  },
+  "howtobuy5": {
+    "description": "...",
+    "message": " По Skype <b>slav1_k</b> или <b>vladimir752489</b>"
+  },
+  "howtobuy6": {
+    "description": "...",
+    "message": "На Ваш запрос менеджер дает ответ:"
+  },
+  "howtobuy7": {
+    "description": "...",
+    "message": "По наличию товара на складе"
+  },
+  "howtobuy8": {
+    "description": "...",
+    "message": "По срокам доставки в Ваш город (если не Харьков)"
+  },
+  "howtobuy9": {
+    "description": "...",
+    "message": "По форме оплаты"
+  },
+  "howtobuy10": {
+    "description": "...",
+    "message": "По стоимости доставки (самовывоз автозапчастей, дисков колесных, аккумуляторов или технических жидкостей, возможен только в Харькове)"
+  },
+  "howtobuy11": {
+    "description": "...",
+    "message": "По любым другим возникшим у Вас вопросам, касающихся покупки авто товаров."
+  },
+  "howtobuy12": {
+    "description": "...",
+    "message": "Если Вас все устраивает, для заказа необходимы следующие данные:"
+  },
+  "howtobuy13": {
+    "description": "...",
+    "message": "ФИО заказчика (или название компании)"
+  },
+  "howtobuy14": {
+    "description": "...",
+    "message": "Контактный мобильный телефон"
+  },
+  "howtobuy15": {
+    "description": "...",
+    "message": "Способ доставки"
+  },
+  "howtobuy16": {
+    "description": "...",
+    "message": "Способ расчета"
+  },
+  "howtobuy17": {
+    "description": "...",
+    "message": "Режим работы:"
+  },
+  "howtobuy18": {
+    "description": "...",
+    "message": "Понедельник–Пятница"
+  },
+  "howtobuy19": {
+    "description": "...",
+    "message": "с 08:00 до 20:00"
+  },
+  "howtobuy20": {
+    "description": "...",
+    "message": "Суббота"
+  },
+  "howtobuy21": {
+    "description": "...",
+    "message": "с 10:00 до 16:00 "
+  },
+  "battery": {
+    "description": "...",
+    "message": "Аккумуляторы"
+  },
+  "selyear": {
+    "description": "...",
+    "message": "Выберите год"
+  },
+  "selmark": {
+    "description": "...",
+    "message": "Выберите марку"
+  },
+  "selmodel": {
+    "description": "...",
+    "message": "Выберите модель"
+  },
+  "selmodif": {
+    "description": "...",
+    "message": "Выберите модификацию"
+  },
+  "contact": {
+    "description": "...",
+    "message": "Контакты"
+  },
+  "contact1": {
+    "description": "...",
+    "message": "Адрес офиса: "
+  },
+  "contact2": {
+    "description": "...",
+    "message": "г. Харьков, проспект Московский, 199Д-5, оф.  251.7"
+  },
+  "contact3": {
+    "description": "...",
+    "message": "Здание находится на перекрестке Московского проспекта с улицей Плехановской - на котором стоит знак Турбоатом (пропеллер), справа (если стоять лицом к центру). Серое пятиэтажное здание на нем написано «IBC Capital. Оренда офiсних примiщень». Центральный вход в здание, поворачиваете направо по лестнице второй этаж. На втором этаже налево, по коридору вторая дверь справа надпись "
+  },
+  "contact4": {
+    "description": "...",
+    "message": "ВНИМАНИЕ!"
+  },
+  "contact5": {
+    "description": "...",
+    "message": " Указанный адрес — не склад, если вы хотите посмотреть товар, его необходимо заказать заранее."
+  },
+  "contact6": {
+    "description": "...",
+    "message": "Контакты наших менеджеров:"
+  },
+  "contact7": {
+    "description": "...",
+    "message": "Прямой номер для жителей Киева:"
+  },
+  "contact8": {
+    "description": "...",
+    "message": "Для заказа товара:"
+  },
+  "contact9": {
+    "description": "...",
+    "message": "Директор:"
+  },
+  "contact10": {
+    "description": "...",
+    "message": "Шитова Наталья"
+  },
+  "contact11": {
+    "description": "...",
+    "message": "Руководитель отдела продаж:"
+  },
+  "contact12": {
+    "description": "...",
+    "message": "Кондратенко Вячеслав"
+  },
+  "contact13": {
+    "description": "...",
+    "message": "(ответственный за заказ товара, претензии,возвраты)"
+  },
+  "contact14": {
+    "description": "...",
+    "message": "Руководитель отдела закупок:"
+  },
+  "contact15": {
+    "description": "...",
+    "message": "Овсиенко Владимир"
+  },
+  "contact16": {
+    "description": "...",
+    "message": "Менеджер:"
+  },
+  "contact17": {
+    "description": "...",
+    "message": "Свердлов Андрей"
+  },
+  "contact18": {
+    "description": "...",
+    "message": "Рубцов Александр"
+  },
+  "contact19": {
+    "description": "...",
+    "message": "Бухгалтерия:"
+  },
+  "contact20": {
+    "description": "...",
+    "message": "Молчанов Денис"
+  },
+  "contact21": {
+    "description": "...",
+    "message": "Бровикова Татьяна"
+  },
+  "contact22": {
+    "description": "...",
+    "message": "Карта проезда (схема):"
+  },
+  "contact23": {
+    "description": "...",
+    "message": "Телефон:"
+  },
+  "home": {
+    "description": "...",
+    "message": "Главная"
+  },
+  "users": {
+    "description": "...",
+    "message": "Пользователи"
+  },
+  "selauto": {
+    "description": "...",
+    "message": "Подбор по авто"
+  },
+  "selparam": {
+    "description": "...",
+    "message": "Подбор по паpаметрам"
+  },
+  "selbrand": {
+    "description": "...",
+    "message": "Выберите бренд"
+  },
+  "all": {
+    "description": "...",
+    "message": "Все"
+  },
+  "capacity": {
+    "description": "...",
+    "message": "Емкость "
+  },
+  "current": {
+    "description": "...",
+    "message": "Пусковой ток"
+  },
+  "voltage": {
+    "description": "...",
+    "message": "Напряжение"
+  },
+  "terminal": {
+    "description": "...",
+    "message": "Клемма"
+  },
+  "length": {
+    "description": "...",
+    "message": "Длина"
+  },
+  "width": {
+    "description": "...",
+    "message": "Ширина"
+  },
+  "height": {
+    "description": "...",
+    "message": "Высота"
+  },
+  "currency1": {
+    "description": "...",
+    "message": " "
+  },
+  "currency2": {
+    "description": "...",
+    "message": " руб."
+  },
+  "page": {
+    "description": "...",
+    "message": "Страница"
+  },
+  "of": {
+    "description": "...",
+    "message": "из"
+  },
+  "itemcount": {
+    "description": "...",
+    "message": "Найдено позиций:"
+  },
+  "addcart": {
+    "description": "...",
+    "message": "Добавить в корзину"
+  },
+  "article": {
+    "description": "...",
+    "message": "Артикул "
+  },
+  "size": {
+    "description": "...",
+    "message": "ДхШхВ "
+  },
+  "cursh": {
+    "description": "...",
+    "message": "Ток хол.пр. "
+  },
+  "polar": {
+    "description": "...",
+    "message": "Полярность "
+  },
+  "terminal_____": {
+    "description": "...",
+    "message": "Клемма "
+  }
+}

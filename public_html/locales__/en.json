@@ -1,0 +1,306 @@
+{
+"howtobuy" :{
+	"description": "...",
+	"message": "How to buy"
+},
+"howtobuy1" :{
+	"description": "...",
+	"message": "You can place an order for parts you need by any of the following ways:"
+},
+"howtobuy2" :{
+	"description": "...",
+	"message": "to add items to the cart;"
+},
+"howtobuy3" :{
+	"description": "...",
+	"message": "to call us by phone numbers:"
+},
+"howtobuy4" :{
+	"description": "...",
+	"message": "to send a request to our e-mail;"
+},
+"howtobuy5" :{
+	"description": "...",
+	"message": "to contact us by Skype <b>slav1_k</b> or <b>cartuz.manager_2</b>"
+},
+"howtobuy6" :{
+	"description": "...",
+	"message": "Our managers will advise you:"
+},
+"howtobuy7" :{
+	"description": "...",
+	"message": "if the items you need are available at the moment;"
+},
+"howtobuy8" :{
+	"description": "...",
+	"message": "how much time the delivery to your city takes (if you are not in Kharkov);"
+},
+"howtobuy9" :{
+	"description": "...",
+	"message": "about ways of payment;"
+},
+"howtobuy10" :{
+	"description": "...",
+	"message": "how much the delivery costs (you can pick up the ordered items only in Kharkov);"
+},
+"howtobuy11" :{
+	"description": "...",
+	"message": "about any questions concerning purchasing in our web-store."
+},
+"howtobuy12" :{
+	"description": "...",
+	"message": "To process your order we need the following data:"
+},
+"howtobuy13" :{
+	"description": "...",
+	"message": "your name and surname (or a name of your company);"
+},
+"howtobuy14" :{
+	"description": "...",
+	"message": "contact phone number;"
+},
+"howtobuy15" :{
+	"description": "...",
+	"message": "method of delivery;"
+},
+"howtobuy16" :{
+	"description": "...",
+	"message": "method of payment."
+},
+"howtobuy17" :{
+	"description": "...",
+	"message": "Working hours:"
+},
+"howtobuy18" :{
+	"description": "...",
+	"message": "Mon - Fri"
+},
+"howtobuy19" :{
+	"description": "...",
+	"message": "8 a.m. - 8 p.m."
+},
+"howtobuy20" :{
+	"description": "...",
+	"message": "Sat"
+},
+"howtobuy21" :{
+	"description": "...",
+	"message": "10 a.m. - 4 p.m."
+},
+"battery" :{
+	"description": "...",
+	"message": "Batteries"
+},
+"selyear" :{
+	"description": "...",
+	"message": "Select year"
+},
+"selmark" :{
+	"description": "...",
+	"message": "Select make"
+},
+"selmodel" :{
+	"description": "...",
+	"message": "Select model"
+},
+"selmodif" :{
+	"description": "...",
+	"message": "Select engine"
+},
+"contact" :{
+	"description": "...",
+	"message": "Contact us"
+},
+"contact1" :{
+	"description": "...",
+	"message": "Office Address:"
+},
+"contact2" :{
+	"description": "...",
+	"message": "Kharkov, Moskovskiy av., 199-D5, office 251.7"
+},
+"contact3" :{
+	"description": "...",
+	"message": "Our web-store office is situated in a business center “IBC Capital”. This is a beige five-storied building located at the crossing of Moskovskiy av. and Plekhanovskaya str. (in front of the Turboatom Factory Memorial in the form of a big turbine with blades). Please walk in the front entrance, turn right and go upstairs to the second floor. There turn left, walk along the corridor to the second door on the right side. Our office is #251.7."
+},
+"contact4" :{
+	"description": "...",
+	"message": "Please notice:"
+},
+"contact5" :{
+	"description": "...",
+	"message": "the address indicated above is NOT a warehouse. So if you want to examine an item closely yourself – you need to order it beforehand."
+},
+"contact6" :{
+	"description": "...",
+	"message": "Our contact phone numbers:"
+},
+"contact7" :{
+	"description": "...",
+	"message": "Direct number for inhabitants of Kiev:"
+},
+"contact8" :{
+	"description": "...",
+	"message": "To place an order:"
+},
+"contact9" :{
+	"description": "...",
+	"message": "Director:"
+},
+"contact10" :{
+	"description": "...",
+	"message": "Shitova Natalia"
+},
+"contact11" :{
+	"description": "...",
+	"message": "Sales Manager:"
+},
+"contact12" :{
+	"description": "...",
+	"message": "Kondratenko Vyacheslav"
+},
+"contact13" :{
+	"description": "...",
+	"message": "(responsible for orders, claims, purchase returns)"
+},
+"contact14" :{
+	"description": "...",
+	"message": "Purchasing Manager:"
+},
+"contact15" :{
+	"description": "...",
+	"message": "Ovsienko Vladimir"
+},
+"contact16" :{
+	"description": "...",
+	"message": "Manager:"
+},
+"contact17" :{
+	"description": "...",
+	"message": "Sverdlov Andrey"
+},
+"contact18" :{
+	"description": "...",
+	"message": "Rubtsov Alexander"
+},
+"contact19" :{
+	"description": "...",
+	"message": "Bookkeeping:"
+},
+"contact20" :{
+	"description": "...",
+	"message": "Molchanov Denis"
+},
+"contact21" :{
+	"description": "...",
+	"message": "Brovikova Tatiana"
+},
+"contact22" :{
+	"description": "...",
+	"message": "Location map:"
+},
+"contact23" :{
+	"description": "...",
+	"message": "Phone:"
+},
+"home" :{
+	"description": "...",
+	"message": "Home"
+},
+"users" :{
+	"description": "...",
+	"message": "Users"
+},
+"selauto" :{
+	"description": "...",
+	"message": "Search by car"
+},
+"selparam" :{
+	"description": "...",
+	"message": "Search of parameters"
+},
+"selbrand" :{
+	"description": "...",
+	"message": "Select a brand"
+},
+"all" :{
+	"description": "...",
+	"message": "All"
+},
+"capacity" :{
+	"description": "...",
+	"message": "Capacity"
+},
+"current" :{
+	"description": "...",
+	"message": "Starting current"
+},
+"voltage" :{
+	"description": "...",
+	"message": "Voltage"
+},
+"terminal" :{
+	"description": "...",
+	"message": "Terminal"
+},
+"length" :{
+	"description": "...",
+	"message": "Length"
+},
+"width" :{
+	"description": "...",
+	"message": "Width"
+},
+"height" :{
+	"description": "...",
+	"message": "Height"
+},
+"currency1" :{
+	"description": "...",
+	"message": " $ "
+},
+"currency2" :{
+	"description": "...",
+	"message": " "
+},
+"page" :{
+	"description": "...",
+	"message": "Page"
+},
+"of" :{
+	"description": "...",
+	"message": "of"
+},
+"itemcount" :{
+	"description": "...",
+	"message": "Item Count:"
+},
+"addcart" :{
+	"description": "...",
+	"message": "Add to Shopping Cart"
+},
+"article" :{
+	"description": "...",
+	"message": "Article "
+},
+"size" :{
+	"description": "...",
+	"message": "Size "
+},
+"cursh" :{
+	"description": "...",
+	"message": "Current "
+},
+"polar" :{
+	"description": "...",
+	"message": "Polar "
+},
+"toastmsg" :{
+	"description": "...",
+	"message": "The data is saved, to update refresh the page (F5)"
+},
+"i18nname75" :{
+	"description": "...",
+	"message": "Note: <br> * Entries with blank (remote) field <strong> Name </strong> not saved. It is recommended to remove records. <br> ** Field <strong> Name </strong> filled <strong> ONLY </strong> developer. Be careful !!! <br> *** double quotation marks (&#34;) in the message when you save will be replaced by the code &#34;<strong> & # 34; </strong>&#34;, a new line in the tag &#34; <strong>< br ></strong> &#34; (and should be)"
+}
+}

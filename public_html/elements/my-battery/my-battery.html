@@ -1,0 +1,664 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="my-battery">
+  <style type="text/css">
+    :host {
+      display: block;
+      /*position: relative;*/
+    }
+
+    iron-selector > * {
+      padding: 8px;
+      height: 20px;
+    }
+
+    .iron-selected {
+      background-color: #ddd;
+    }
+
+    /*.horizontal-section {*/
+    /*padding: 0 !important;*/
+    /*}*/
+
+    .scrl {
+      overflow-y: scroll;
+    }
+
+    .sz {
+      width: 100%;
+      height: 228px;
+    }
+
+    .szh {
+      height: 40px;
+    }
+
+    .szw100 {
+      width: 100%;
+      display: inline-block;
+    }
+
+    .szwb {
+      min-width: 250px;
+      max-width: 100%;
+      display: inline-block;
+    }
+
+    .szw50 {
+      width: 50%;
+      display: inline;
+    }
+
+    .szwp {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .szwt {
+      /*width: 100%;*/
+      padding: 20px;
+      margin: 20px 20px 20px 20px;
+      /*display: inline;*/
+    }
+
+    .pagin {
+      margin: 20px 20px 0px 0px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .inlin {
+      margin: 3px;
+      /*text-align: center;*/
+      display: inline-block;
+    }
+
+    .szimage {
+      width: 150px;
+      height: 150px;
+    }
+
+    .itm {
+      /*width: 100%;*/
+      cursor: pointer;
+    }
+
+    .pictures {
+      width: 80px;
+      height: 80px;
+    }
+    .card {
+      /*vertical-align:middle;*/
+      float: right;
+      /*vertical-align: top;*/
+      /*margin: 20px 20px 0px 0px;*/
+      /*padding: 20px 5px 5px 5px;*/
+      min-width: 300px;
+      /*max-width: 50%;*/
+      margin: 5px;
+      padding: 5px;
+      /*width: calc(33% - 21px);*/
+      /*height: 300px;*/
+      /*text-align: center;*/
+      display: inline-block;
+      /*position: relative;*/
+      /*background-color: var(--paper-grey-200);*/
+    }
+    .buttoncart {
+      width: 98%;
+      height: 36px;
+      border-radius: 2px;
+      background-color: rgb( 255, 152, 0 );
+    }
+    .buttoncarttxt {
+      font-size: 14px;
+      font-family: "Roboto";
+      color: rgb( 255, 255, 255 );
+    }
+    .buttons_pressed {
+      background-color: rgb( 245, 124, 0 );
+    }
+    .buttoncart:hover {
+      background-color: rgb( 251, 140, 0 );
+      cursor: pointer;
+    }
+    .carttxt {
+      font-size: 14px;
+      color: rgb( 114, 114, 114 );
+    }
+    .carttxt2 {
+      font-size: 14px;
+      color: rgb( 33, 33, 33 );
+    }
+
+    [dcardv] {
+    @apply(--layout-vertical);
+      /*@apply(--layout-center-center);*/
+    }
+
+    [dcardh] {
+    @apply(--layout-horizontal);
+    @apply(--layout-center);
+    }
+
+    [dcardc] {
+    @apply(--layout-center-center);
+    }
+
+    .pictures {
+      width: 100%;
+      height: 160px;
+    }
+
+    .icons {
+      width: 30px;
+      height: 30px;
+    }
+
+    .icons2 {
+      width: 60px;
+      height: 60px;
+    }
+
+    .icons3 {
+      width: 50px;
+      height: 20px;
+    }
+
+    .usage {
+      width: 22px;
+      height: 22px;
+    }
+
+    paper-button {
+      display: inline-block;
+    }
+
+    paper-button[toggles] {
+      transition: background-color 0.3s;
+    }
+
+    paper-button[toggles][active] {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    paper-button[toggles][active].colorful {
+      background-color: rgba(66, 133, 244, 0.25);
+    }
+
+    paper-button[toggles][active][raised].colorful {
+      background-color: rgba(66, 133, 244, 0.75);
+    }
+
+    /*#tabsContainer.paper-tabs {*/
+       /*white-space: normal;*/
+    /*}*/
+    paper-fab.green {
+      --paper-fab-background: var(--paper-green-500);
+      --paper-fab-keyboard-focus-background: var(--paper-green-900);
+    }
+
+
+  </style>
+  <template>
+
+
+    <iron-ajax id="idajax"
+               url="/ajax/req.php"
+               handle-as="json"
+               on-response="handleResponse"
+               last-response="{{ajaxResponse}}"
+               debounce-duration="300">
+    </iron-ajax>
+
+
+    <!--Выбор бренда-->
+    <paper-material elevation="2">
+
+    </paper-material>
+    <paper-material elevation="2">
+      <div dcardh>
+        <paper-material class="szw50" elevation="4">
+          <button class="szh szw100" on-click="batbrandtoggle">
+            <div>{{batbrandname}}</div>
+          </button>
+          <iron-collapse class="sz" id="batbrandcollapse">
+            <div class="scrl sz">
+              <iron-selector class="szh" selected="{{batbrandsel}}">
+                <template is="dom-repeat" items="{{batbranditems}}">
+                  <div dcardh>
+                    <iron-image class="icons2" sizing="contain" src$="{{__imgb(item.id)}}"></iron-image>
+                    <div class="itm">{{item.name}}</div>
+                  </div>
+                </template>
+              </iron-selector>
+            </div>
+          </iron-collapse>
+        </paper-material>
+
+        <paper-material class="szw50" elevation="4">
+          <button class="szh szw100" on-click="batmodeltoggle">
+            <div>{{batmodelname}}</div>
+          </button>
+          <iron-collapse class="sz" id="batmodelcollapse">
+            <div class="scrl sz">
+              <iron-selector selected="{{batmodelsel}}">
+                <template is="dom-repeat" items="{{batmodelitems}}">
+                  <div class="itm"><span>{{item.name}}</span></div>
+                </template>
+              </iron-selector>
+            </div>
+          </iron-collapse>
+        </paper-material>
+      </div>
+
+    </paper-material>
+
+    <paper-tabs selected="{{tabselected}}">
+      <paper-tab style="white-space: normal;">
+        <i18n-msg msgid="selauto"></i18n-msg>
+      </paper-tab>
+      <div>
+        <paper-spinner id="spin"></paper-spinner>
+      </div>
+      <paper-tab style="white-space: normal;">
+        <i18n-msg msgid="selparam"></i18n-msg>
+      </paper-tab>
+    </paper-tabs>
+
+    <iron-pages selected="{{tabselected}}">
+      <!--Подбор по авто-->
+      <div>
+        <paper-material style$="{{swidth}}" elevation="2">
+
+          <paper-material class="szw100" elevation="4">
+            <button class="szw100 szh" on-click="marktoggle">
+              <div>{{markname}}</div>
+            </button>
+            <iron-collapse class="sz" id="markcollapse">
+              <div class="scrl sz">
+                <iron-selector class="szh" selected="{{marksel}}">
+                  <template is="dom-repeat" items="{{markitems}}">
+                    <div class="itm">{{item.name}}</div>
+                  </template>
+                </iron-selector>
+              </div>
+            </iron-collapse>
+          </paper-material>
+
+          <paper-material class="szw100" elevation="4">
+            <button class="szw100 szh" on-click="yeartoggle">
+              <div>{{yearname}}</div>
+            </button>
+            <iron-collapse class="sz" id="yearcollapse">
+              <div class="scrl sz">
+                <iron-selector selected="{{yearsel}}">
+                  <template is="dom-repeat" items="{{yearitems}}">
+                    <div class="itm"><span>{{item}}</span></div>
+                  </template>
+                </iron-selector>
+              </div>
+            </iron-collapse>
+          </paper-material>
+
+          <paper-material class="szw100" elevation="4">
+            <button class="szw100 szh" on-click="modeltoggle">
+              <div>{{modelname}}</div>
+            </button>
+            <iron-collapse class="sz" id="modelcollapse">
+              <div class="scrl sz">
+                <iron-selector selected="{{modelsel}}">
+                  <template is="dom-repeat" items="{{modelitems}}">
+                    <div class="itm"><span>{{item.name}}</span> c <span>{{item.start_date}}</span></div>
+                  </template>
+                </iron-selector>
+              </div>
+            </iron-collapse>
+          </paper-material>
+
+          <paper-material class="szw100" elevation="4">
+            <button class="szw100 szh" on-click="modiftoggle">
+              <div>{{modifname}}</div>
+            </button>
+            <iron-collapse class="sz" id="modifcollapse">
+              <div class="scrl sz">
+                <iron-selector selected="{{modifsel}}">
+                  <template is="dom-repeat" items="{{modifitems}}">
+                    <div class="itm">{{item.name_full}}</div>
+                  </template>
+                </iron-selector>
+              </div>
+            </iron-collapse>
+          </paper-material>
+        </paper-material>
+      </div>
+
+      <!--подбор по параметрам-->
+      <div>
+        <paper-material elevation="2">
+          <paper-material elevation="4">
+            <div class="inlin">
+              <paper-button id="idapp0" toggles raised active on-tap="tapapp">
+                <iron-image class="icons" sizing="contain" src="../../images/icons/cars.svg"></iron-image>
+              </paper-button>
+              <template is="dom-repeat" items="{{appitems}}">
+                <paper-button id="{{idapp(item.batteryUsage)}}" raised toggles on-tap="tapapp">
+                  <iron-image class="icons" sizing="contain" src$="{{__imgi(item.batteryUsage)}}"></iron-image>
+                </paper-button>
+              </template>
+            </div>
+          </paper-material>
+
+          <paper-material elevation="4">
+            <div class="inlin">
+              <paper-button id="idpol100" toggles raised active on-tap="tappolar">
+                <i18n-msg msgid="all"></i18n-msg>
+              </paper-button>
+              <template is="dom-repeat" items="{{polaritems}}">
+                <paper-button id="{{idpol(item.polar)}}" toggles raised on-tap="tappolar">
+                  <iron-image class="icons3" sizing="contain" src$="{{__imgp(item.polar)}}"></iron-image>
+                </paper-button>
+              </template>
+
+            </div>
+          </paper-material>
+
+          <div class="inlin">
+
+            <paper-material style$="{{swidth}}" class="inlin" elevation="4">
+              <button class="szw100 szh" style$="{{colorcapacity}}" on-click="capacitytoggle">
+                <div>
+                  <i18n-msg msgid="capacity"></i18n-msg>
+                  : <span>{{capacityname}}</span></div>
+              </button>
+              <iron-collapse class="sz" id="capacitycollapse">
+                <div class="scrl sz">
+                  <iron-selector class="szh" selected="{{capacitysel}}">
+                    <template is="dom-repeat" items="{{capacityitems}}">
+                      <div class="itm">{{item.name}}</div>
+                    </template>
+                  </iron-selector>
+                </div>
+              </iron-collapse>
+            </paper-material>
+
+            <paper-material style$="{{swidth}}" class="inlin" elevation="4">
+              <button class="szw100 szh" style$="{{colorcurrent}}" on-click="currenttoggle">
+                <div>
+                  <i18n-msg msgid="current"></i18n-msg>
+                  <!--(А): <span>{{currentname}}</span></div>-->
+                  (A): <span>{{currentname}}</span></div>
+              </button>
+              <iron-collapse class="sz" id="currentcollapse">
+                <div class="scrl sz">
+                  <iron-selector class="szh" selected="{{currentsel}}">
+                    <template is="dom-repeat" items="{{currentitems}}">
+                      <div class="itm">{{item.current}}</div>
+                    </template>
+                  </iron-selector>
+                </div>
+              </iron-collapse>
+            </paper-material>
+
+            <paper-material style$="{{swidth}}" class="inlin" elevation="4">
+              <button class="szw100 szh" style$="{{colorvoltage}}" on-click="voltagetoggle">
+                <div>
+                  <i18n-msg msgid="voltage"></i18n-msg>
+                  : <span>{{voltagename}}</span></div>
+              </button>
+              <iron-collapse class="sz" id="voltagecollapse">
+                <div class="scrl sz">
+                  <iron-selector class="szh" selected="{{voltagesel}}">
+                    <template is="dom-repeat" items="{{voltageitems}}">
+                      <div class="itm">{{item.name}}</div>
+                    </template>
+                  </iron-selector>
+                </div>
+              </iron-collapse>
+            </paper-material>
+
+            <paper-material style$="{{swidth}}" class="inlin" elevation="4">
+              <button class="szw100 szh" style$="{{colorterminal}}" on-click="terminaltoggle">
+                <div>
+                  <i18n-msg msgid="terminal"></i18n-msg>
+                  : <span>{{terminalname}}</span></div>
+              </button>
+              <iron-collapse class="sz" id="terminalcollapse">
+                <div class="scrl sz">
+                  <iron-selector class="szh" selected="{{terminalsel}}">
+                    <template is="dom-repeat" items="{{terminalitems}}">
+                      <div class="itm">{{item.name}}</div>
+                    </template>
+                  </iron-selector>
+                </div>
+              </iron-collapse>
+            </paper-material>
+
+
+            <paper-material style$="{{swidth}}" class="inlin" elevation="4">
+              <button class="szw100 szh" style$="{{colorlength}}" on-click="lengthtoggle">
+                <div>
+                  <i18n-msg msgid="length"></i18n-msg>
+                  (mm): <span>{{lengthname}}</span></div>
+              </button>
+              <iron-collapse class="sz" id="lengthcollapse">
+                <div class="scrl sz">
+                  <iron-selector class="szh" selected="{{lengthsel}}">
+                    <template is="dom-repeat" items="{{lengthitems}}">
+                      <div class="itm">{{item.length}}</div>
+                    </template>
+                  </iron-selector>
+                </div>
+              </iron-collapse>
+            </paper-material>
+
+            <paper-material style$="{{swidth}}" class="inlin" elevation="4">
+              <button class="szw100 szh" style$="{{colorwidth}}" on-click="widthtoggle">
+                <div>
+                  <i18n-msg msgid="width"></i18n-msg>
+                  (mm): <span>{{widthname}}</span></div>
+              </button>
+              <iron-collapse class="sz" id="widthcollapse">
+                <div class="scrl sz">
+                  <iron-selector class="szh" selected="{{widthsel}}">
+                    <template is="dom-repeat" items="{{widthitems}}">
+                      <div class="itm">{{item.width}}</div>
+                    </template>
+                  </iron-selector>
+                </div>
+              </iron-collapse>
+            </paper-material>
+
+            <paper-material style$="{{swidth}}" class="inlin" elevation="4">
+              <button class="szw100 szh" style$="{{colorheight}}" on-click="heighttoggle">
+                <div>
+                  <i18n-msg msgid="height"></i18n-msg>
+                  (mm): <span>{{heightname}}</span></div>
+              </button>
+              <iron-collapse class="sz" id="heightcollapse">
+                <div class="scrl sz">
+                  <iron-selector class="szh" selected="{{heightsel}}">
+                    <template is="dom-repeat" items="{{heightitems}}">
+                      <div class="itm">{{item.height}}</div>
+                    </template>
+                  </iron-selector>
+                </div>
+              </iron-collapse>
+            </paper-material>
+
+          </div>
+
+        </paper-material>
+
+      </div>
+
+    </iron-pages>
+
+
+    <paper-material class="szw100"  style="margin-top: 15px" elevation="4">
+      <iron-collapse class="sz" id="pagcollapse">
+      <div class="inlin">
+        <div class="inlin">
+          <paper-button raised active on-tap="begPage">
+            <<
+          </paper-button>
+          <paper-button raised active on-tap="previousPage">
+            <
+          </paper-button>
+        </div>
+        <div class="inlin">
+          <span> <i18n-msg msgid="page"></i18n-msg>: <span>{{curpage}}</span> <i18n-msg msgid="of"></i18n-msg> <span>{{numpage}}</span>, </span>
+          <span> <i18n-msg msgid="itemcount"></i18n-msg><span>{{itemscount}}</span></span>
+        </div>
+        <div class="inlin">
+          <paper-button raised active on-tap="nextPage">
+            >
+          </paper-button>
+          <paper-button raised active on-tap="endPage">
+            >>
+          </paper-button>
+
+        </div>
+      </div>
+      </iron-collapse>
+    </paper-material>
+
+
+    <!--Card-->
+    <div>
+      <template is="dom-repeat" items="{{cardbat}}">
+          <paper-material id="{{idpm(item.id)}}" on-mouseover="mousecard" class="card" style$="{{widthcard}}" elevation="3">
+          <!--<a href="/user/index/search-by-code-brand/code/{{item.articleSearch}}/producer/{{item.name}}" target="_blank">-->
+          <!--<div>{{item.title}}</div>-->
+            <div style="margin: 10px; height: 260px;">
+              <div dcardh>
+                <div>
+                  <paper-fab mini icon="done" title="done" class="green"></paper-fab>
+                </div>
+                <div style="margin: 10px; height: 50px;">
+                  <b>{{item.name}}</b>
+                  <div>{{item.modelname}}</div>
+                </div>
+              </div>
+              <div class="flex">
+                <iron-image class="pictures" sizing="contain" src$="{{__img(item.id)}}"></iron-image>
+              </div>
+              <p style="color: green">
+                <i18n-msg msgid="currency1"></i18n-msg>{{price_format(item.minPrice,item.maxPrice)}}<i18n-msg msgid="currency2"></i18n-msg>
+              </p>
+            </div>
+            <br><br>
+            <!--<div class="parmcard">-->
+            <!--<div id="{{idparcard(item.id)}}" style="display: none;">-->
+            <iron-collapse class="sz" id="{{idparcard(item.id)}}">
+              <paper-button noink class="buttoncart">
+                <i18n-msg class="buttoncarttxt" msgid="addcart"></i18n-msg>
+              </paper-button>
+                <br><br><br>
+
+            <div dcardh>
+              <div dcardh style="width: 55%">
+                &nbsp
+                <div><i18n-msg class="carttxt" msgid="article"></i18n-msg></div>
+                <div class="flex"></div>
+                <div><span class="carttxt2">{{item.article}}</span></div>
+              </div>
+
+              <div dcardh style="width: 44%">
+                &nbsp &nbsp
+                <i18n-msg class="carttxt" msgid="capacity"></i18n-msg>
+                <div class="flex"></div>
+                <span class="carttxt2">{{item.capacity}}</span>
+              </div>
+            </div>
+            <br>
+
+            <div dcardh>
+              <div dcardh style="width: 55%">
+                &nbsp
+                <div><i18n-msg class="carttxt" msgid="size"></i18n-msg></div>
+                <div class="flex"></div>
+                <div><span title="{{lengthl}}">{{item.length}}</span>x<span title="{{widthl}}">{{item.width}}</span>x<span title="{{heightl}}">{{item.height}}</span></div>
+              </div>
+
+              <div dcardh style="width: 44%">
+                &nbsp &nbsp
+                <i18n-msg class="carttxt" msgid="cursh"></i18n-msg>
+                <div class="flex"></div>
+                <span class="carttxt2">{{item.cold_cranking_amperage}}</span>&nbspA
+              </div>
+            </div>
+            <br>
+
+              <div dcardh>
+                <div dcardh style="width: 55%">
+                  &nbsp
+                  <div><i18n-msg class="carttxt" msgid="polar"></i18n-msg></div>
+                  <div class="flex"></div>
+                  <div><iron-image class="usage" sizing="contain" src$="{{__imgp(item.polar)}}"></iron-image></div>
+                </div>
+
+                <div dcardh style="width: 44%">
+                  &nbsp &nbsp
+                  <i18n-msg class="carttxt" msgid="terminal"></i18n-msg>
+                  <div class="flex"></div>
+                  <span class="carttxt2">{{item.terminal}}</span>
+                </div>
+              </div>
+                <br>
+              <div dcardh  style="width: 95%">
+                <div class="flex"></div>
+                <span class="carttxt2">{{item.voltage}}</span> &nbsp &nbsp
+                <iron-image class="usage" sizing="contain" src$="{{__imgi(item.batteryUsage)}}"></iron-image>
+              </div>
+                <br>
+            </iron-collapse>
+         <!--</a>-->
+        </paper-material>
+      </template>
+    </div>
+
+    <paper-material class="szw100"  style="margin-top: 15px" elevation="4">
+      <iron-collapse class="sz" id="pagcollapse2">
+        <div class="inlin">
+          <div class="inlin">
+            <paper-button raised active on-tap="begPage">
+              <<
+            </paper-button>
+            <paper-button raised active on-tap="previousPage">
+              <
+            </paper-button>
+          </div>
+          <div class="inlin">
+            <span> <i18n-msg msgid="page"></i18n-msg>: <span>{{curpage}}</span> <i18n-msg msgid="of"></i18n-msg> <span>{{numpage}}</span>, </span>
+            <span> <i18n-msg msgid="itemcount"></i18n-msg><span>{{itemscount}}</span></span>
+          </div>
+          <div class="inlin">
+            <paper-button raised active on-tap="nextPage">
+              >
+            </paper-button>
+            <paper-button raised active on-tap="endPage">
+              >>
+            </paper-button>
+
+          </div>
+        </div>
+      </iron-collapse>
+    </paper-material>
+    <iron-media-query query="(min-width: 1000px)" query-matches="{{mq1000}}"></iron-media-query>
+    <iron-media-query query="(min-width: 1200px)" query-matches="{{mq1200}}"></iron-media-query>
+    <iron-media-query query="(min-width: 1400px)" query-matches="{{mq1400}}"></iron-media-query>
+    <iron-media-query query="(min-width: 1600px)" query-matches="{{mq1600}}"></iron-media-query>
+
+  </template>
+
+</dom-module>
+<script src="battery.js"></script>

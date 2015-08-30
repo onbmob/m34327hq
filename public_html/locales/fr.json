@@ -1,0 +1,306 @@
+{
+"howtobuy" :{
+	"description": "...",
+	"message": "Comment acheter"
+},
+"howtobuy1" :{
+	"description": "...",
+	"message": "Placer une commande pour les pièces nécessaires peut être l'une des façons suivantes:"
+},
+"howtobuy2" :{
+	"description": "...",
+	"message": "via la boutique en ligne de panier;"
+},
+"howtobuy3" :{
+	"description": "...",
+	"message": "par téléphone:"
+},
+"howtobuy4" :{
+	"description": "...",
+	"message": "Envoyez une demande à e-mail "
+},
+"howtobuy5" :{
+	"description": "...",
+	"message": " Par Skype <b>slav1_k</b> ou <b>vladimir752489</b>"
+},
+"howtobuy6" :{
+	"description": "...",
+	"message": "A votre gestionnaire de requêtes donne la réponse:"
+},
+"howtobuy7" :{
+	"description": "...",
+	"message": "En stock"
+},
+"howtobuy8" :{
+	"description": "...",
+	"message": "En termes de livraison de votre ville (sinon Kharkov)"
+},
+"howtobuy9" :{
+	"description": "...",
+	"message": "La forme de paiement"
+},
+"howtobuy10" :{
+	"description": "...",
+	"message": "Comme le coût de la livraison de pièces (Pickup automobiles, entraînements de roues, les batteries ou liquides industriels, est possible seulement dans Kharkov)"
+},
+"howtobuy11" :{
+	"description": "...",
+	"message": "Pour toutes autres questions que vous pourriez avoir concernant les marchandises de voiture d'achat."
+},
+"howtobuy12" :{
+	"description": "...",
+	"message": "Si vous êtes satisfait, d'ordonner les données suivantes:"
+},
+"howtobuy13" :{
+	"description": "...",
+	"message": "Nom du client (ou le nom de l'entreprise)"
+},
+"howtobuy14" :{
+	"description": "...",
+	"message": "Contactez téléphone mobile"
+},
+"howtobuy15" :{
+	"description": "...",
+	"message": "Mode de livraison"
+},
+"howtobuy16" :{
+	"description": "...",
+	"message": "Mode de paiement"
+},
+"howtobuy17" :{
+	"description": "...",
+	"message": "Mode de fonctionnement:"
+},
+"howtobuy18" :{
+	"description": "...",
+	"message": "Lundi-Vendredi"
+},
+"howtobuy19" :{
+	"description": "...",
+	"message": "8h00-20h00"
+},
+"howtobuy20" :{
+	"description": "...",
+	"message": "Samedi"
+},
+"howtobuy21" :{
+	"description": "...",
+	"message": "10h00-16h00"
+},
+"battery" :{
+	"description": "...",
+	"message": "Batterie"
+},
+"selyear" :{
+	"description": "...",
+	"message": "Sélectionnez l'année"
+},
+"selmark" :{
+	"description": "...",
+	"message": "Sélectionnez la marque"
+},
+"selmodel" :{
+	"description": "...",
+	"message": "Choisissez un modèle"
+},
+"selmodif" :{
+	"description": "...",
+	"message": "Sélectionnez modification"
+},
+"contact" :{
+	"description": "...",
+	"message": "Contact"
+},
+"contact1" :{
+	"description": "...",
+	"message": "Adresse De Bureau:"
+},
+"contact2" :{
+	"description": "...",
+	"message": "Kharkov, Moskovsky Prospect, 199D-5, de. 251,7"
+},
+"contact3" :{
+	"description": "...",
+	"message": "Le bâtiment est situé à l'intersection de l'avenue Plekhanov de Moscou à la rue - qui est un signe de Turboatom (hélice), la droite (face au centre). Gris bâtiment de cinq étages sur ce qui est écrit «IBC Capital. Оренда офiсних примiщень». L'entrée principale du bâtiment, tourner à droite sur les escaliers du deuxième étage. Au deuxième étage, à gauche, dans le couloir de la deuxième porte à droite inscription "
+},
+"contact4" :{
+	"description": "...",
+	"message": "ATTENTION! "
+},
+"contact5" :{
+	"description": "...",
+	"message": " L'adresse - pas un entrepôt, si vous voulez voir les marchandises, il doit être commandé à l'avance."
+},
+"contact6" :{
+	"description": "...",
+	"message": "Contactez nos gestionnaires:"
+},
+"contact7" :{
+	"description": "...",
+	"message": "Numéro direct pour les habitants de Kiev:"
+},
+"contact8" :{
+	"description": "...",
+	"message": "Pour commander un produit:"
+},
+"contact9" :{
+	"description": "...",
+	"message": "Directeur:"
+},
+"contact10" :{
+	"description": "...",
+	"message": "Shitova Natalia"
+},
+"contact11" :{
+	"description": "...",
+	"message": "Chef des ventes:"
+},
+"contact12" :{
+	"description": "...",
+	"message": "Kondratenko Vyacheslav"
+},
+"contact13" :{
+	"description": "...",
+	"message": "(Responsable de la commande de marchandises, les remboursements de sinistres)"
+},
+"contact14" :{
+	"description": "...",
+	"message": "Chef des achats:"
+},
+"contact15" :{
+	"description": "...",
+	"message": "Ovsienko Vladimir"
+},
+"contact16" :{
+	"description": "...",
+	"message": "Manager:"
+},
+"contact17" :{
+	"description": "...",
+	"message": "Sverdlov Andrei"
+},
+"contact18" :{
+	"description": "...",
+	"message": "Rubtsov Alexander"
+},
+"contact19" :{
+	"description": "...",
+	"message": "Comptabilité:"
+},
+"contact20" :{
+	"description": "...",
+	"message": "Molchanov Denis"
+},
+"contact21" :{
+	"description": "...",
+	"message": "Brovikova Tatiana"
+},
+"contact22" :{
+	"description": "...",
+	"message": "Carte (schématique):"
+},
+"contact23" :{
+	"description": "...",
+	"message": "Téléphone"
+},
+"home" :{
+	"description": "...",
+	"message": "Fondamental"
+},
+"users" :{
+	"description": "...",
+	"message": "Utilisateurs"
+},
+"selauto" :{
+	"description": "...",
+	"message": "Sélection par voiture"
+},
+"selparam" :{
+	"description": "...",
+	"message": "Sélection des paramètres"
+},
+"selbrand" :{
+	"description": "...",
+	"message": "Sélectionnez une marque"
+},
+"all" :{
+	"description": "...",
+	"message": "Tous"
+},
+"capacity" :{
+	"description": "...",
+	"message": "Сapacité"
+},
+"current" :{
+	"description": "...",
+	"message": "Courant de démarrage"
+},
+"voltage" :{
+	"description": "...",
+	"message": "Tension"
+},
+"terminal" :{
+	"description": "...",
+	"message": "Vis de serrage"
+},
+"length" :{
+	"description": "...",
+	"message": "Longueur"
+},
+"width" :{
+	"description": "...",
+	"message": "Largeur"
+},
+"height" :{
+	"description": "...",
+	"message": "Hauteur"
+},
+"currency1" :{
+	"description": "...",
+	"message": " "
+},
+"currency2" :{
+	"description": "...",
+	"message": " €"
+},
+"page" :{
+	"description": "...",
+	"message": "Page"
+},
+"of" :{
+	"description": "...",
+	"message": "de"
+},
+"itemcount" :{
+	"description": "...",
+	"message": "Nombre D'Éléments:"
+},
+"addcart" :{
+	"description": "...",
+	"message": "Ajouter au Panier"
+},
+"article" :{
+	"description": "...",
+	"message": "Article "
+},
+"size" :{
+	"description": "...",
+	"message": "Taille "
+},
+"cursh" :{
+	"description": "...",
+	"message": "Courant "
+},
+"polar" :{
+	"description": "...",
+	"message": "Polarité "
+},
+"toastmsg" :{
+	"description": "...",
+	"message": "fr------------------------------------"
+},
+"i18nname75" :{
+	"description": "...",
+	"message": "ghjghgh"
+}
+}

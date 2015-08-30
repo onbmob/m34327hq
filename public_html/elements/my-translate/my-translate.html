@@ -1,0 +1,227 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="my-translate">
+  <style type="text/css">
+    :host {
+      display: block;
+      /*position: relative;*/
+    }
+    paper-card {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+    paper-toast{
+      right: 150px;
+      left: auto;
+      width: 150px;
+
+    }
+    .container {
+    @apply(--layout-horizontal);
+    @apply(--layout-center);
+    }
+    .flexchild {
+    @apply(--layout-flex);
+    }
+
+  </style>
+  <template>
+
+    <iron-ajax id="ajaxru" url="/locales/ru.json" on-response="ruResp" last-response="{{masRU}}"></iron-ajax>
+    <iron-ajax id="ajaxen" url="/locales/en.json" on-response="enResp" last-response="{{masEN}}"></iron-ajax>
+    <iron-ajax id="ajaxfr" url="/locales/fr.json" on-response="frResp" last-response="{{masFR}}"></iron-ajax>
+
+
+    <paper-material elevation="2">
+
+      <template is="dom-repeat" items="{{masLang}}">
+        <paper-card>
+          <div class="card-content">
+            <div class="container"><h3> Name: &nbsp &nbsp  &nbsp</h3>
+            <paper-textarea class="flexchild" no-label-float label="" value="{{item.name}}"></paper-textarea>
+            </div>
+            <div class="container"><h3> ru: &nbsp &nbsp</h3>
+            <paper-textarea class="flexchild" no-label-float label="" value="{{item.ru}}"></paper-textarea>
+            </div>
+            <div class="container"><h3> en: &nbsp &nbsp</h3>
+            <paper-textarea class="flexchild" no-label-float label="" value="{{item.en}}"></paper-textarea>
+            </div>
+            <div class="container"><h3> fr : &nbsp &nbsp</h3>
+            <paper-textarea class="flexchild" no-label-float label="" value="{{item.fr}}"></paper-textarea>
+            </div>
+          </div>
+          <!--<div class="card-actions">-->
+            <!--<paper-button>Nay</paper-button>-->
+            <!--<paper-button>Yay!</paper-button>-->
+          <!--</div>-->
+        </paper-card>
+      </template>
+      <paper-material elevation="4" style="margin: 25px;padding: 25px;"><i18n-msg msgid="i18nname75"></i18n-msg><br></paper-material>
+
+    </paper-material>
+
+
+    <!--<iron-ajax id="idajax"-->
+    <!--url="/locales/en.json"-->
+    <!--handle-as="json"-->
+    <!--on-response="handleResponse"-->
+    <!--last-response="{{ajaxResponse}}"-->
+    <!--debounce-duration="300">-->
+    <!--</iron-ajax>-->
+    <iron-ajax id="idajax"
+               method="POST"
+
+               url="/ajax/lang.php"
+               on-response="handleResponse"
+               last-response="{{ajaxResponse}}"
+               contentType="json"
+               handle-as="json">
+    </iron-ajax>
+    <!--method="POST"  body='{"foo":1, "bar":2}'   handleAs="text"    contentType="application/json"    params='{"mas": "asdfgh"}'>-->
+
+    <paper-toast id="toast"><i18n-msg msgid="toastmsg"></i18n-msg></paper-toast>
+
+  </template>
+
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'my-translate',
+            listeners: {
+//                'hover': 'obshover'
+//                'idpagin.tap': 'bpagin'
+            },
+
+      properties: {
+        lang: {type: String, observer: 'obslang', notify: true},
+        fadd: {type: Number, value: 0, observer: 'obsadd', notify: true},
+        fsave: {type: Number, value: 0, observer: 'obssave', notify: true},
+        masLang: {type: Array, value: []},
+//        mark: {type: Number, value: 123456},
+//        toastmsg: {type: String, value: '1111111111'}
+      },
+
+      //================================================
+      mark: function (){
+      return ''+Math.ceil(Math.random() * 1000000);
+      },
+
+  ready: function () {
+        this.$.ajaxru.url="/locales/ru.json?"+this.mark();
+        this.$.ajaxru.generateRequest(); // go!!
+
+//        this.$.idajax.params.sost = 4;
+//        this.$.idajax.generateRequest(); // go!!
+//        this.$.spin.active = false;
+
+      },
+      obslang: function () {
+        console.log('obslangtrans=' + this.lang);
+        if(this.lang=='') return;
+//        this.toastmsg = document.querySelector('i18n-msg').getMsg('toastmsg');
+      },
+      obsadd: function () {
+        if(this.fadd==0) return;
+        this.push('masLang',{"name" : "i18nname"+this.masLang.length, "ru" : "",
+          "en" : "", "fr" : ""});
+      },
+
+
+
+      obssave: function () {
+        if(this.fsave==0) return;
+        var Util = {
+          getQueryString: function (params) {
+            var queryParts = [];
+            var param;
+            var value;
+            for (param in params) {
+              value = params[param];
+              param = window.encodeURIComponent(param);
+              if (value !== null) param += '=' + window.encodeURIComponent(value);
+              queryParts.push(param);
+            }
+            return queryParts.join('&');
+          }
+        };
+        var mru='{';  var men='{'; var mfr='{';
+        var comma='';
+        for(var i=0; i<this.masLang.length; i++){
+          if(this.masLang[i].name!='') {
+            mru += comma + '\n"' + this.masLang[i].name + '" :{\n\t"description": "...",\n\t"message": "'
+                + this.masLang[i].ru.replace(/\"/g,'&#34;').replace(/\n/g,'<br>') + '"\n}';
+            men += comma + '\n"' + this.masLang[i].name + '" :{\n\t"description": "...",\n\t"message": "'
+                + this.masLang[i].en.replace(/\"/g,'&#34;').replace(/\n/g,'<br>') + '"\n}';
+            mfr += comma + '\n"' + this.masLang[i].name + '" :{\n\t"description": "...",\n\t"message": "'
+                + this.masLang[i].fr.replace(/\"/g,'&#34;').replace(/\n/g,'<br>') + '"\n}';
+            comma = ',';
+          }
+        }
+        mru += '\n}';  men += '\n}'; mfr += '\n}';
+
+        this.$.idajax.body = Util.getQueryString({
+          "mru" : mru,
+          "men" : men,
+          "mfr" : mfr
+//          "masen" : JSON.stringify(men),
+        });
+        this.$.idajax.generateRequest(); // go!!
+      },
+
+
+
+
+
+
+      ruResp: function () {
+        this.masLang =[];
+        for(i in this.masRU)
+          this.push('masLang',{"name" : i, "ru" : this.masRU[i].message});
+        this.$.ajaxen.url="/locales/en.json?"+this.mark();
+        this.$.ajaxen.generateRequest(); // go!!
+      },
+      enResp: function () {
+        k=0;
+        for(i in this.masEN)
+          this.set('masLang.'+(k++)+'.en',  this.masEN[i].message);
+        this.$.ajaxfr.url="/locales/fr.json?"+this.mark();
+        this.$.ajaxfr.generateRequest(); // go!!
+      },
+      frResp: function () {
+        k=0;
+        for(i in this.masFR)
+          this.set('masLang.'+(k++)+'.fr',  this.masFR[i].message);
+//        document.querySelector('i18n-msg')._languageChanged();
+      },
+
+
+      handleResponse: function () {
+        console.log(this.ajaxResponse);
+        this.$.toast.show();
+        this.$.ajaxru.generateRequest();
+
+
+//        switch (this.ajaxResponse.sost) {
+//          case '0':
+//            break;
+//          default :
+//        }
+//        this.$.spin.active = false;
+      }
+
+
+    });
+
+  })();
+
+
+</script>

@@ -1,0 +1,4 @@
+# phpstorm project files
+.idea
+bower_components
+/bower_components

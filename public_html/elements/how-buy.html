@@ -1,0 +1,111 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="how-buy">
+  <style>
+    :host {
+      display: block;
+    }
+    .name-step-head>span{
+      display: inline-block;
+      background: #f4af14;
+      padding: 7px 20px;
+      color: #000;
+      position: relative;
+      top: -32px;
+      left: -5px;
+      font-size: 23px;
+      text-align: center;
+    }
+    .name-step-head>span:before{
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-bottom: 16px solid #ba8e18;
+      border-left: 14px solid transparent;
+      position: absolute;
+      top: 0;
+      left: -14px;
+    }
+    .name-step-head ol{
+      color: #5c5d5c;
+      font-size: 12px;
+    }
+    .extra-info{
+      margin: 10px 5px 30px 20px;
+      clear: left;
+    }
+
+
+
+  </style>
+  <template>
+    <div class="name-step-head">
+      <span><i18n-msg msgid="howtobuy"></i18n-msg></span>
+    </div>
+    <div class="extra-info">
+      <p><i18n-msg msgid="howtobuy1"></i18n-msg></p>
+      <ul>
+        <li style="margin-bottom:7px;"><i18n-msg msgid="howtobuy2"></i18n-msg></li>
+        <li style="margin-bottom:7px;"><i18n-msg msgid="howtobuy3"></i18n-msg>
+          <ul style="margin-top:7px;">
+            <li style="margin-bottom:5px;">+38 (057) 760-21-00</li>
+            <li style="margin-bottom:5px;">+38 (095) 515-97-25</li>
+            <li style="margin-bottom:5px;">+38 (067) 355-15-85</li>
+            <li style="margin-bottom:5px;">+38 (063) 233-21-10</li>
+          </ul>
+        </li>
+        <li style="margin-bottom:7px;"><i18n-msg msgid="howtobuy4"></i18n-msg><a href="mailto:zakaz@cartuz.com">zakaz@cartuz.com</a></li>
+        <li style="margin-bottom:7px;"><i18n-msg msgid="howtobuy5"></i18n-msg></li>
+      </ul>
+      <p><i18n-msg msgid="howtobuy6"></i18n-msg></p>
+      <ol style="margin-top:7px;">
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy7"></i18n-msg></li>
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy8"></i18n-msg></li>
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy9"></i18n-msg></li>
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy10"></i18n-msg></li>
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy11"></i18n-msg></li>
+      </ol>
+      <p><i18n-msg msgid="howtobuy12"></i18n-msg></p>
+      <ol style="margin-top:7px;">
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy13"></i18n-msg></li>
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy14"></i18n-msg></li>
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy15"></i18n-msg></li>
+        <li style="margin-bottom:5px;"><i18n-msg msgid="howtobuy16"></i18n-msg></li>
+      </ol>
+      <table>
+        <tr>
+          <td><i18n-msg msgid="howtobuy17"></i18n-msg></td>
+          <td><i18n-msg msgid="howtobuy18"></i18n-msg></td>
+          <td><i18n-msg msgid="howtobuy19"></i18n-msg></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="text-align: right;"><i18n-msg msgid="howtobuy20"></i18n-msg></td>
+          <td><i18n-msg msgid="howtobuy21"></i18n-msg></td>
+        </tr>
+      </table>
+    </div>
+    </div></div>
+
+  </template>
+
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'how-buy',
+      properties: {},
+      ready: function () {
+      }
+    });
+  })();
+</script>

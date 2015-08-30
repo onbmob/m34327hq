@@ -1,0 +1,240 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="my-contact">
+  <style>
+    :host {
+      display: block;
+    }
+    .name-step-head>span{
+      display: inline-block;
+      background: #f4af14;
+      padding: 7px 20px;
+      color: #000;
+      position: relative;
+      top: -32px;
+      left: -5px;
+      font-size: 23px;
+      text-align: center;
+    }
+    .name-step-head>span:before{
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-bottom: 16px solid #ba8e18;
+      border-left: 14px solid transparent;
+      position: absolute;
+      top: 0;
+      left: -14px;
+    }
+    .name-step-head ol{
+      color: #5c5d5c;
+      font-size: 12px;
+    }
+    .extra-info{
+      margin: 10px 5px 30px 20px;
+      clear: left;
+    }
+
+    .contact-top{margin-top: 24px;}
+    .contact-text{line-height:23px; text-align: justify;}
+    .contact-text-black{color: black;}
+    .contact-building-img{width: 100%;}
+    .contact-schedule{display: table; width: 100%; margin-top: 28px;}
+    .contact-schedule-header{display: table-header-group;}
+    .contact-schedule-header-cell-left, .contact-schedule-header-cell-right{display: table-cell;}
+    .contact-schedule-header-cell-left{display: table-cell; width: 60%;}
+    .contact-schedule-header-cell-right{display: table-cell; width: 40%;}
+    .contact-schedule-row{display: table-row;}
+    .contact-schedule-cell-left, .contact-schedule-cell-right {display: table-cell;}
+    .contact-schedule-cell-left{width: 60%;}
+    .contact-schedule-cell-right{width: 40%;}
+    .contact-timing-table{width: 100%; display: table;}
+    .contact-timing-table-row{display: table-row; width: 100%;}
+    .contact-timing-cell-left{display: table-cell; padding: 5px; width: 50px;}
+    .contact-timing-cell-right{display: table-cell;}
+    .contact-personal-cell-left {display: table-cell; width: 60%; vertical-align: middle;}
+    /*.contact-personal-cell-right{display: table-cell; width: 40%; display: table-cell; text-align: center; vertical-align: middle;}*/
+    .contact-personal-cell-right{display: table-cell; width: 100%; text-align: center; vertical-align: middle;}
+    .map{margin: 0px auto; display: block; width: 100%;}
+    /*.contact-personal-cell-right img{display: block; margin: 0 auto;}*/
+
+    .name-info-contacts img{
+      vertical-align: middle;
+    }
+    .info-contacts{
+      margin: 20px auto 15px 20px;
+      float: left;
+    }
+    .name-info-contacts{
+      color:#4993CE;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: left;
+    }
+
+
+  </style>
+  <template>
+    <div class="name-step-head"><span><i18n-msg msgid="contact"></i18n-msg></span></div>
+    <div class="contact-text contact-top">
+      <div class="name-info-contacts"><i18n-msg msgid="contact1"></i18n-msg></div>
+      <p><span class="contact-text-black"><i18n-msg msgid="contact2"></i18n-msg></span><br />
+        <i18n-msg msgid="contact3"></i18n-msg><span class="contact-text-black">«251.7. Cartuz.com.ua».</span></p>
+      <img class="contact-building-img" src="../images/building.jpg"/>
+      <p><span class="name-info-contacts"><i18n-msg msgid="contact4"></i18n-msg></span><i18n-msg msgid="contact5"></i18n-msg></p>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-header">
+        <div class="contact-schedule-header-cell-left name-info-contacts"><i18n-msg msgid="contact6"></i18n-msg></div>
+        <div class="contact-schedule-header-cell-right name-info-contacts"><i18n-msg msgid="howtobuy17"></i18n-msg></div>
+      </div>
+      <div class="contact-schedule-row">
+        <div class="contact-schedule-cell-left">
+          <p><span class="contact-text-black">(095) 515-97-25</span></p>
+          <p><span class="contact-text-black">(067) 355-15-85</span></p>
+          <p><span class="contact-text-black">(063) 233-21-10</span></p>
+          <p><span class="contact-text-black">(096) 905-21-19</span></p>
+        </div>
+        <div class="contact-schedule-cell-right">
+          <div class="contact-timing-table">
+            <div class="contact-timing-table-row">
+              <div class="contact-timing-cell-left"><i18n-msg msgid="howtobuy18"></i18n-msg></div>
+              <div class="contact-timing-cell-right contact-text-black"><i18n-msg msgid="howtobuy19"></i18n-msg></div>
+            </div>
+            <div class="contact-timing-table-row">
+              <div class="contact-timing-cell-left"><i18n-msg msgid="howtobuy20"></i18n-msg></div>
+              <div class="contact-timing-cell-right contact-text-black"><i18n-msg msgid="howtobuy21"></i18n-msg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-header">
+        <div class="contact-schedule-header-cell-left name-info-contacts"><i18n-msg msgid="contact7"></i18n-msg></div>
+        <div class="contact-schedule-header-cell-right name-info-contacts"><i18n-msg msgid="contact8"></i18n-msg></div>
+      </div>
+      <div class="contact-schedule-row">
+        <div class="contact-schedule-cell-left"><p><span class="contact-text-black">(044) 233-21-10</span></p></div>
+        <div class="contact-schedule-cell-right"><p>E-mail: <a href="mailto:zakaz@cartuz.com">zakaz@cartuz.com</a></p></div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-row">
+        <div class="contact-personal-cell-left">
+          <p><span class="name-info-contacts"><i18n-msg msgid="contact9"></i18n-msg></span>
+            <span class="contact-text-black"><i18n-msg msgid="contact10"></i18n-msg></span></p>
+          <p>E-mail: <a href="mailto:shitova.natalia@cartuz.com">shitova.natalia@cartuz.com</a></p>
+        </div>
+        <div class="contact-personal-cell-right">
+          <img src="../images/shitova.png" border="0" />
+        </div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-row">
+        <div class="contact-personal-cell-left">
+          <p><span class="name-info-contacts"><i18n-msg msgid="contact11"></i18n-msg></span>
+            <span class="contact-text-black"><i18n-msg msgid="contact12"></i18n-msg></span><br />
+            <i18n-msg msgid="contact13"></i18n-msg></p>
+          <p>Skype: <span class="name-info-contacts">slav1_k</span></p>
+          <p>E-mail: <a href="mailto:kondratenko.vyacheslav@cartuz.com">kondratenko.vyacheslav@cartuz.com</a></p>
+        </div>
+        <div class="contact-personal-cell-right">
+          <img src="../images/kondratenko.png" border="0" />
+        </div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-row">
+        <div class="contact-personal-cell-left">
+          <p><span class="name-info-contacts"><i18n-msg msgid="contact14"></i18n-msg></span>
+            <span class="contact-text-black"><i18n-msg msgid="contact15"></i18n-msg></span></p>
+          <p>Skype: <span class="name-info-contacts">cartuz.manager_2</span></p>
+          <p>E-mail: <a href="mailto:ovsienko.vladimir@cartuz.com">ovsienko.vladimir@cartuz.com</a></p>
+        </div>
+        <div class="contact-personal-cell-right">
+          <img src="../images/ovsienko.png" border="0" />
+        </div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-row">
+        <div class="contact-personal-cell-left">
+          <p><span class="name-info-contacts"><i18n-msg msgid="contact16"></i18n-msg></span>
+            <span class="contact-text-black"><i18n-msg msgid="contact17"></i18n-msg></span></p>
+          <p>Skype: <span class="name-info-contacts">cartuz.manager_3</span></p>
+          <p>E-mail: <a href="mailto:sverdlov.andrey@cartuz.com">sverdlov.andrey@cartuz.com</a></p>
+        </div>
+        <div class="contact-personal-cell-right">
+          <img src="../images/sverdlov.png" border="0" />
+        </div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-row">
+        <div class="contact-personal-cell-left">
+          <p><span class="name-info-contacts"><i18n-msg msgid="contact16"></i18n-msg></span>
+            <span class="contact-text-black"><i18n-msg msgid="contact18"></i18n-msg></span></p>
+          <p>Skype: <span class="name-info-contacts">cartuz.manager_4</span></p>
+          <p>E-mail: <a href="mailto:rubtsov.alexandr@cartuz.com">rubtsov.alexandr@cartuz.com</a></p>
+        </div>
+        <div class="contact-personal-cell-right">
+          <img src="../images/rubtsov.png" border="0" />
+        </div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-row">
+        <div class="contact-personal-cell-left">
+          <p><span class="name-info-contacts"><i18n-msg msgid="contact19"></i18n-msg></span>
+            <span class="contact-text-black"><i18n-msg msgid="contact20"></i18n-msg></span></p>
+          <p>Skype: <span class="name-info-contacts">cartuz.booker</span></p>
+          <p>E-mail: <a href="mailto:molchanov.denis@cartuz.com">molchanov.denis@cartuz.com</a></p>
+          <p><i18n-msg msgid="contact23"></i18n-msg> <span class="contact-text-black">(057) 760-21-00</span></p>
+        </div>
+        <div class="contact-personal-cell-right">
+          <img src="../images/molchanov.png" border="0" />
+        </div>
+      </div>
+    </div>
+    <div class="contact-schedule">
+      <div class="contact-schedule-row">
+        <div class="contact-personal-cell-left">
+          <p><span class="name-info-contacts"><i18n-msg msgid="contact19"></i18n-msg></span>
+            <span class="contact-text-black"><i18n-msg msgid="contact21"></i18n-msg></span></p>
+          <p>Skype: <span class="name-info-contacts">stemsc.booker</span></p>
+        </div>
+        <div class="contact-personal-cell-right">
+          <img src="../images/borovikova.png" border="0" />
+        </div>
+      </div>
+    </div>
+
+    <div class="map">
+      <p class="contact-text-black"><i18n-msg msgid="contact22"></i18n-msg></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1283.0134521867644!2d36.299966!3d49.973354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41270a69336f2183%3A0xaac1fd1c35b2360b!2z0JDQstGC0L7Qt9Cw0L_Rh9Cw0YHRgtC4LiDQmNC90YLQtdGA0L3QtdGCINC80LDQs9Cw0LfQuNC9INCw0LLRgtC-0LfQsNC_0YfQsNGB0YLQtdC5IENhcnR1ei5jb20udWE!5e0!3m2!1sen!2s!4v1434973072349" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+    </div>
+
+  </template>
+
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'my-contact',
+      properties: {},
+      ready: function () {
+      }
+    });
+  })();
+</script>
