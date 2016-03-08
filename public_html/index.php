@@ -1,10 +1,8 @@
 <!doctype html>
 <!--
 @license
-head на master
-c dev merge
+fff
 
-master
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
