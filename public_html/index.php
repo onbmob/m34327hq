@@ -1,8 +1,30 @@
 <!doctype html>
 <!--
+Dev
 @license
 fff
 
+<<<<<<< Updated upstream
+test2 + 3
+=======
+<<<<<<< c3070da21f9cb7e4556bec552817b9cd56e81ec6
+fff
+hf_1
+hotfix pr1hf
+hotfix pr1hf
+
+hotfix pr1hf
+=======
+feature1
+>>>>>>> feature1
+
+>>>>>>> Stashed changes
+hotfix pr1hf
+afeature1
+feature2
+
+fff
+hf_1
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
