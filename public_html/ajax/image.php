@@ -1,5 +1,6 @@
 <?php
 include 'cfg.php';
+
 $id = $_GET['id'];
 $dbh = new PDO($dbn, $user, $pass);
 header("Content-type: image/jpg");
